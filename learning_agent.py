@@ -1,6 +1,6 @@
 import numpy as np
 
-import BanditAutomaton
+import bandit_automaton
 
 
 class LearningAgent:
@@ -12,7 +12,7 @@ class LearningAgent:
         assert 1 >= epsilon >= 0
         self.epsilon = epsilon
 
-    def train_agent(self, automaton: BanditAutomaton, steps: int):
+    def train_agent(self, automaton: bandit_automaton, steps: int):
         used_leavers = np.zeros(steps)
         for i in range(steps):
 

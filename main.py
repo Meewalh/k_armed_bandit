@@ -3,8 +3,8 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 
-import BanditAutomaton
-import learningAgent
+import bandit_automaton
+import learning_agent
 
 
 def count_occurrences(array, value):
@@ -37,8 +37,8 @@ for current_epsilon in epsilon_values:
     for iteration in range(0, number_iterations):
         # print("Starting iteration", iteration)
         # create automaton and agent for the current iteration
-        automaton = BanditAutomaton.BanditAutomaton(number_levers)
-        agent = learningAgent.LearningAgent(number_levers, current_epsilon)
+        automaton = bandit_automaton.BanditAutomaton(number_levers)
+        agent = learning_agent.LearningAgent(number_levers, current_epsilon)
 
         # train the agent and save the results
         used_leavers = agent.train_agent(automaton, number_steps)
